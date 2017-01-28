@@ -1,11 +1,3 @@
-
-<div class="cruise">
-  <div class="header">
-    <p>Twicas Cruise</p>
-    <p>Logout</p>
-  </div>
-  <div class="video">
-    <!--a(ng-href="{{live.url}}")video(ng-src="{{live.url}}" autoplay="true" controls="true" poster="/img/screen-offline-320-flash-ja.jpg" width="320" height="180")
-    -->
-  </div>
-</div>
+<a ng-href="{{live.url}}">
+  <video ng-src="{{live.url}}" autoplay="true" controls="true" poster="/img/screen-offline-320-flash-ja.jpg" width="320" height="180"></video></a>
+<p ng-click="nextCast()">next</p>
