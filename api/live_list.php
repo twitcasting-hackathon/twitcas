@@ -14,8 +14,7 @@ foreach( $lists->movies as $list ){
 
 	if ( $list->movie->is_live == true && $list->movie->is_protected == false ){
 	
-		//echo $list->movie->hls_url . "-" . $list->movie->id . "<br>";
-		$ret[] = array("url" => $list->movie->hls_url, "id" => $list->movie->id);
+		$ret[] = array("url" => $list->movie->hls_url, "id" => $list->movie->id, "title" => $list->movie->title, "subtitle" => $list->movie->subtitle, "name" => $list->broadcaster->name, "screen_id" => $list->broadcaster->screen_id);
 	
 	}
 
