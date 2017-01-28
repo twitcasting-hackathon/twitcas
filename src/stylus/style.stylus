@@ -1,7 +1,13 @@
 @font-face {
-	font-family: "Tsukushi";
-	src: url("../fonts/TsukushiAMaruGothic_0.ttf");
+	font-family: 'OpenSans';
+	src:url(../fonts/OpenSans.ttf) format('truetype');
 }
+@font-face {
+	font-family: 'OpenSansBold';
+	src:url(../fonts/OpenSans-Semibold.ttf) format('truetype');
+}
+
+twicasblue = #5b69bf
 
 * 
 	padding: 0
@@ -9,5 +15,73 @@
 	box-sizing: border-box
 
 html,body
+	font-family 'OpenSans'
+	width 100%
+	height 100%
+	background-color twicasblue
+	text-align center
 	h1
-		color: #333	
+		color #eee
+
+.top
+	.header
+		width 100%
+		height 300px;
+		background-color rgba(0,0,0,0.4);
+		.title
+			position relative
+			top 2.5em;
+			h1
+				position relative
+				font-size 3.5em
+				color #efefef
+				letter-spacing 5px
+			p
+				font-size 1em;
+				font-weight lighter
+				color #ddd
+				letter-spacing 2px
+		.button
+			&:hover
+				box-shadow:none;
+			position relative
+			cursor pointer
+			margin 0 auto
+			top 4em
+			width 200px
+			height 50px
+			background #efefef
+			box-shadow:0px 5px 8px 2px #212121;
+			p
+				font-size 1.5em
+				font-weight bold
+				color #444
+				padding-top 8px
+	.main
+		.card
+			position relative
+			display inline-block
+			width 280px
+			height 280px
+			background #efefef
+			overflow-x hidden
+			margin .5em;
+			margin-top 2em;
+			text-align left
+			img
+				height 140px
+			.caps
+				margin .5em 1em
+				h2
+					color #333
+					font-size 1.4em
+					letter-spacing 2px
+				p
+					color #333
+					font-size .8em
+					letter-spacing 1px
+				p
+					&:nth-of-type(2)
+						margin-top 1em
+						font-weight bold
+						letter-spacing 0
