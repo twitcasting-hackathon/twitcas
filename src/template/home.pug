@@ -7,11 +7,11 @@ div.top(ng-show="dark")
 			p START CRUISE
 	div.main
 		div.card(ng-repeat="card in cards")
-			img(src="{{live.thumbnail}}")
+			img(src="{{card.thumbnail}}")
 			div.caps
-				h2 {{live.title}}
-				p {{live.subtitle}}
-				p {{live.name}}
+				h2 {{card.title}}　
+				p {{card.subtitle}}　
+				p {{card.name}}　
 
 div(ng-show="light")
 	.head
