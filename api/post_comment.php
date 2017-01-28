@@ -1,5 +1,5 @@
 <?php
-require_once("../MoiOAuth.php");
+require_once("MoiOAuth.php");
 
 $id = $_GET["id"];
 $text = $_GET["text"];
