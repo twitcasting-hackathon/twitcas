@@ -9,29 +9,8 @@
       <p>START CRUISE</p>
     </div>
   </div>
-  <div class="main">
-    <div class="card"><img src="pic/thumbnail.png"/>
-      <div class="caps">
-        <h2>{{live.title}}</h2>
-        <p>{{live.subtitle}}</p>
-        <p>{{live.name}}</p>
-      </div>
-    </div>
-    <div class="card"><img src="pic/thumbnail.png"/>
-      <div class="caps">
-        <h2>{{live.title}}</h2>
-        <p>{{live.subtitle}}</p>
-        <p>{{live.name}}</p>
-      </div>
-    </div>
-    <div class="card"><img src="pic/thumbnail.png"/>
-      <div class="caps">
-        <h2>{{live.title}}</h2>
-        <p>{{live.subtitle}}</p>
-        <p>{{live.name}}</p>
-      </div>
-    </div>
-    <div class="card"><img src="pic/thumbnail.png"/>
+  <div class="main" ng-repeat="card in cards">
+    <div class="card"><img src="{{live.thumbnail}}"/>
       <div class="caps">
         <h2>{{live.title}}</h2>
         <p>{{live.subtitle}}</p>

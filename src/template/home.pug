@@ -5,27 +5,9 @@ div.top
 			p ランダムでキャスを旋回できるサービス
 		div.button(ng-click="login()")
 			p START CRUISE
-	div.main
+	div.main(ng-repeat="card in cards")
 		div.card
-			img(src="pic/thumbnail.png")
-			div.caps
-				h2 {{live.title}}
-				p {{live.subtitle}}
-				p {{live.name}}
-		div.card
-			img(src="pic/thumbnail.png")
-			div.caps
-				h2 {{live.title}}
-				p {{live.subtitle}}
-				p {{live.name}}
-		div.card
-			img(src="pic/thumbnail.png")
-			div.caps
-				h2 {{live.title}}
-				p {{live.subtitle}}
-				p {{live.name}}
-		div.card
-			img(src="pic/thumbnail.png")
+			img(src="{{live.thumbnail}}")
 			div.caps
 				h2 {{live.title}}
 				p {{live.subtitle}}
