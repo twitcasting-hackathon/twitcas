@@ -60,7 +60,6 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 			//first
 			$scope.live = $scope.lives[0];
 			$scope.counter++;
-			$scope.getComment($scope.live.id);
 
 			$scope.strtCast();
 		})
@@ -83,6 +82,7 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 	$scope.nextCast = function(){
 		$scope.counter++;
 		$scope.live = $scope.lives[$scope.counter];
+		$scope.getComment($scope.live.id);
 		$interval.cancel(loop);
 		$scope.strtCast();
 	}
@@ -99,6 +99,17 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 			console.log(err);
 		})
 	}
+	
+	$scope.postComment = function(){
+		text = $scope.newComment;
+		console.log(text);
+
+		$http.get('../api/post_comment.php?id=' + $scope.live.id + "&at=" + token + "&text=" + text)
+			.then(function(res){
+				getComment($scope.live.id);
+			});
+	}
+
 	$scope.pause = function(){
 		$interval.cancel(loop);
 	}
