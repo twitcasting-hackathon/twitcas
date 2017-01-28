@@ -6,36 +6,15 @@
   </div>
   <div class="video">
     <h1>{{live.title}}</h1>
-    <p>{{live.subtitle}}</p>
+    <p> {{live.subtitle}}</p>
     <div class="video_panel">
       <video ng-src="{{live.url}}" autoplay="true" controls="true" poster="/img/screen-offline-320-flash-ja.jpg"></video>
       <div class="comments">
         <h1>Comments</h1>
       </div>
       <div class="comment_panel">
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
-        </div>
-        <div class="comment"><img src="pic/icon.jpg"/>
-          <p>コメント</p>
+        <div class="comment" ng-repeat="comment in comments"><img ng-src="{{comment.from_user.image}}"/>
+          <p>{{comment.message}}</p>
         </div>
       </div>
     </div>

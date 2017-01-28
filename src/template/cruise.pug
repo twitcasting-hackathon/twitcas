@@ -4,36 +4,16 @@ div.cruise
 		p Logout
 	div.video
 		h1 {{live.title}}
-		p {{live.subtitle}}
+		p  {{live.subtitle}}
 		div.video_panel
 			video(ng-src="{{live.url}}" autoplay="true" controls="true" poster="/img/screen-offline-320-flash-ja.jpg")
 			div.comments
 				h1 Comments
 			div.comment_panel
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
-				div.comment
-					img(src="pic/icon.jpg")
-					p コメント
+				div.comment(ng-repeat="comment in comments")
+					img(ng-src="{{comment.from_user.image}}")
+					p {{comment.message}}
+				
 	div.bottom
 		img(ng_src="{{live.image}}")
 		h1 {{live.name}}

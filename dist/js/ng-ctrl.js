@@ -62,7 +62,7 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 			console.log($scope.lives[$scope.counter]);
 			$interval(function(){
 				$scope.getComment($scope.live.id);
-			},2000);
+			},4000);
 		},10000)
 	}
 
@@ -79,7 +79,7 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 		$http.post('../api/get_comment.php?id=' + id + "&at=" + token)
 		.then(function(res){
 			console.log(res.data);
-			$scope.comment = res.data.comments;
+			$scope.comments = res.data.comments;
 		})
 		.catch(function(err){
 			console.log(err);
