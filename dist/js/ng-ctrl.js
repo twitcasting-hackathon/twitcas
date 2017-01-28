@@ -71,3 +71,7 @@ app.controller('cruise',function($scope,$http,$timeout,$cookies,$httpParamSerial
 	// test
 	$scope.live.url = "http://twitcasting.tv/c:kyapirun_run/metastream.m3u8/?video=1"
 })
+
+app.controller('history',function($scope){
+
+});
