@@ -39,12 +39,14 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 
 	$http.post('../api/live_list.php?at=' + token)
 		.then(function(res){
+			console.log(res.data)
 
 			$scope.lives = res.data;
 
 			//first
 			$scope.live = $scope.lives[0];
 			$scope.counter++;
+			$scope.getComment($scope.live.id);
 
 			$scope.strtCast();
 		})
@@ -58,6 +60,9 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 			$scope.counter++;
 			$scope.live = $scope.lives[$scope.counter];
 			console.log($scope.lives[$scope.counter]);
+			$interval(function(){
+				$scope.getComment($scope.live.id);
+			},2000);
 		},10000)
 	}
 
@@ -70,6 +75,16 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 
 	// test
 	//$scope.live.url = "http://twitcasting.tv/c:kyapirun_run/metastream.m3u8/?video=1"
+	$scope.getComment = function(id){
+		$http.post('../api/get_comment.php?id=' + id + "&at=" + token)
+		.then(function(res){
+			console.log(res.data);
+			$scope.comment = res.data.comments;
+		})
+		.catch(function(err){
+			console.log(err);
+		})
+	}
 
 })
 
