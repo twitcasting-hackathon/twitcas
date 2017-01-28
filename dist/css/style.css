@@ -373,6 +373,7 @@ body:not(.light) h1 {
   border-bottom: solid 1px #444;
 }
 .post .send {
+  cursor: pointer;
   background: #111;
   padding: 0.5em 0.75em;
   color: #fff;
@@ -382,9 +383,9 @@ body:not(.light) h1 {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 2em;
+  padding: 3.5em 2em;
 }
-.fix a {
+.fix span {
   padding: 0.5em;
   letter-spacing: 2px;
   font-family: 'sen-regular';

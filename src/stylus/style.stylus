@@ -324,6 +324,7 @@ body:not(.light)
 		width: 70%
 		border-bottom: solid 1px #444
 	.send
+		cursor: pointer
 		background: #111
 		padding: .5em .75em
 		color: #fff
@@ -333,8 +334,8 @@ body:not(.light)
 	position: fixed
 	top: 0
 	right: 0
-	padding: 2em
-	a 
+	padding: 3.5em 2em
+	span
 		padding: .5em
 		letter-spacing: 2px
 		font-family: 'sen-regular'
