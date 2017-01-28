@@ -33,9 +33,9 @@ div.curuise-light(ng-show="light")
 				video(ng-src="{{live.url}}" autoplay="true" controls="true")
 				.cont
 					.pause(ng-click="pause()")
-						i.ion-pause
-					.next(ng-click="nextCast()")
 						i.ion-play
+					.next(ng-click="nextCast()")
+						i.ion-skip-forward
 					
 		div 
 			.comments
