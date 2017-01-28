@@ -9,7 +9,7 @@ if ($at && $text && $id){
 
 $mo = new MoiOAuth( $at );
 
-$com = $mo->post( "movies/" . $id . "/comments", array("comment" => $text) );
+$com = $mo->post( "movies/" . $id . "/comments", array("comment" => $text . " #ツイキャスクルーズ") );
 
 header("Content-Type: application/json; charset=UTF-8");
 
