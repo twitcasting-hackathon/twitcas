@@ -5,7 +5,7 @@ $id = $_GET["id"];
 $text = $_GET["text"];
 $at = $_GET["at"];
 
-if ($at){
+if ($at && $text && $id){
 
 $mo = new MoiOAuth( $at );
 
