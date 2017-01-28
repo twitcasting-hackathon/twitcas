@@ -9,7 +9,15 @@ app.config(function($routeProvider,$locationProvider) {
       .when('/login',{ 
       	templateUrl: 'template/login.html',
         controller: 'login'
-      });
+      })
+	  .when('/callback/:param',{
+	  	templateUrl: 'template/callback.html',
+		controller:  'callback'
+	  })
+	  .when('/cruise',{
+	  	templateUrl: 'template/cruise.html',
+		controller: 'cruise'
+	  })
 });
 
 console.log("A");
