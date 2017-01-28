@@ -53,6 +53,8 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 	$scope.counter = 0;
 	var loop;
 	
+	$scope.light = true;
+	$scope.dark = false;
 
 	$http.post('../api/live_list.php?at=' + token)
 		.then(function(res){
@@ -112,6 +114,23 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 				getComment($scope.live.id);
 			});
 	}
+
+	$scope.darkmode = function(){
+		console.log($("body").removeClass())
+		
+		$scope.dark = true;
+		$scope.light = false;
+	}
+
+
+	$scope.lightmode = function(){
+
+		console.log($("body").addClass("light"))
+		$scope.dark  = false;
+		$scope.light = true;
+		console.log("a")
+	}
+
 
 	$scope.pause = function(){
 		$interval.cancel(loop);

@@ -1,4 +1,4 @@
-div.cruise
+div.cruise(ng-show="dark")
 	div.header
 		p Twicas Cruise
 		p Logout
@@ -23,3 +23,36 @@ div.cruise
 		img(ng_src="{{live.image}}")
 		h1 {{live.name}}
 		p @{{live.screen_id}}
+
+div.curuise-light(ng-show="light")
+	.wrapper
+		div
+			.title {{live.title}}
+			.sub {{live.subtitle}}
+			.video-wrapper
+				video(ng-src="{{live.url}}" autoplay="true" controls="true")
+				.cont
+					.pause(ng-click="pause()")
+						i.ion-pause
+					.next(ng-click="nextCast()")
+						i.ion-play
+					
+		div 
+			.comments
+				h2 comments
+				.panel
+					.comment(ng-repeat="comment in comments")
+						.images
+							img(ng-src="{{comment.from_user.image}}")
+						.text
+							p {{comment.message}}
+
+					
+	.post
+		input(ng-model="newComment")
+		.send
+			p(ng-click="postComment()") send
+
+.fix
+	span(ng-click="darkmode()") Dark
+	span(ng-click="lightmode()") Light
