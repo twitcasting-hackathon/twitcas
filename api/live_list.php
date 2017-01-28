@@ -13,8 +13,7 @@ shuffle( $lists->movies );
 foreach( $lists->movies as $list ){
 
 	if ( $list->movie->is_live == true && $list->movie->is_protected == false ){
-	
-		echo $list->movie->hls_url . "-" . $list->movie->id . "<br>";
+
 		$ret[] = array("url" => $list->movie->hls_url, "id" => $list->movie->id);
 	
 	}
