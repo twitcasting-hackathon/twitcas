@@ -135,6 +135,8 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 	$scope.pause = function(){
 		$interval.cancel(loop);
 	}
+
+	$scope.darkmode();
 })
 
 app.controller('history',function($scope){
