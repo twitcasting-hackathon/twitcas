@@ -10,6 +10,10 @@ app.config(function($routeProvider,$locationProvider) {
       	templateUrl: 'template/login.html',
         controller: 'login'
       })
+	  .when('/logout',{
+	  	templateUrl: 'template/logout.html',
+		controller:  'logout'
+	  })
 	  .when('/callback/:param',{
 	  	templateUrl: 'template/callback.html',
 		controller:  'callback'
