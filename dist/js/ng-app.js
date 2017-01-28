@@ -22,6 +22,10 @@ app.config(function($routeProvider,$locationProvider) {
 	  	templateUrl: 'template/cruise.html',
 		controller: 'cruise'
 	  })
+	  .when('/history',{
+	  	templateUrl: 'template/history.html',
+		controller: 'history'
+	  })
 });
 
 console.log("A");

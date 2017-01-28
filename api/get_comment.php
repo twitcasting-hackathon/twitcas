@@ -2,14 +2,13 @@
 require_once("MoiOAuth.php");
 
 $id = $_GET["id"];
-$text = $_GET["text"];
 $at = $_GET["at"];
 
-if ($at && $text && $id){
+if ($id && $at){
 
 $mo = new MoiOAuth( $at );
 
-$com = $mo->post( "movies/" . $id . "/comments", array("comment" => $text . " #ツイキャスクルーズ") );
+$com = $mo->get( "movies/" . $id . "/comments?limit=20" );
 
 header("Content-Type: application/json; charset=UTF-8");
 

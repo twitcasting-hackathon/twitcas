@@ -29,28 +29,50 @@ app.controller('logout',function($scope,$cookies,$location){
 	$location.path("/");
 })
 
-app.controller('cruise',function($scope,$http,$timeout,$cookies,$httpParamSerializerJQLike,$window,$routeParams){
+app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpParamSerializerJQLike,$window,$routeParams){
 	token = $cookies.get('token');
+	$scope.lives = {}
 	$scope.live = {}
+	$scope.counter = 0;
+	var loop;
+	
 
-	options = {
-		headers: {
-			token: token
-		}
+	$http.post('../api/live_list.php?at=' + token)
+		.then(function(res){
+
+			$scope.lives = res.data;
+
+			//first
+			$scope.live = $scope.lives[0];
+			$scope.counter++;
+
+			$scope.strtCast();
+		})
+		.catch(function(err){
+			console.log(err);
+		});
+
+	$scope.strtCast = function(){
+		
+		loop = $interval(function(){
+			$scope.counter++;
+			$scope.live = $scope.lives[$scope.counter];
+			console.log($scope.lives[$scope.counter]);
+		},10000)
 	}
 
-	$timeout(function(){
-		// api Access		
-		$http.get('/api/',options)
-			.then(function(data){
-				console.log(data);
-			})
-			.catch(function(err){
-				console.log(err);
-			});
-		
-	},1000)
-	
+	$scope.nextCast = function(){
+		$scope.counter++;
+		$scope.live = $scope.lives[$scope.counter];
+		$interval.cancel(loop);
+		$scope.strtCast();
+	}
+
 	// test
-	$scope.live.url = "http://twitcasting.tv/miiiimura/metastream.m3u8/?video=1"
+	//$scope.live.url = "http://twitcasting.tv/c:kyapirun_run/metastream.m3u8/?video=1"
+
 })
+
+app.controller('history',function($scope){
+
+});
