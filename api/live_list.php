@@ -1,5 +1,5 @@
 <?php
-require_once("../MoiOAuth.php");
+require_once("MoiOAuth.php");
 
 $at = $_GET["at"];
 
