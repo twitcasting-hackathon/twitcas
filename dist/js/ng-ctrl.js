@@ -50,7 +50,7 @@ app.controller('cruise',function($scope,$http,$timeout,$cookies,$httpParamSerial
 			});
 		
 	},1000)
-
+	
 	// test
 	$scope.live.url = "http://twitcasting.tv/miiiimura/metastream.m3u8/?video=1"
-});
+})
