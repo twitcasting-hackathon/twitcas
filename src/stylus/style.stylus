@@ -69,7 +69,7 @@ html,body
 			margin-top 2em;
 			text-align left
 			img
-				height 140px
+				width 300px
 			.caps
 				margin .5em 1em
 				h2
