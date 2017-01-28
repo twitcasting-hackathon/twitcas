@@ -162,6 +162,47 @@ html,body
 						display inline-block
 						float left
 						margin-left 4.5em
+			.buttons
+				position absolute
+				float right
+				right 5%
+				width 300px
+				bottom 0px
+				> p
+					&:nth-of-type(1)
+						border-right 1px solid #222
+					cursor pointer
+					font-size 1.5em
+					color #ddd
+					left 0
+					padding .25em .5em
+					width 150px
+					float left
+					background-color rgba(0,0,0,0.6)
+	.comment_input
+		position absolute
+		float right
+		right 5%
+		width 300px
+		height 100px
+		bottom 0px
+		textarea
+			select
+				outline none
+			&:focus
+				border solid 1px #aaa
+			width 300px
+			height 100px
+		p
+			position absolute
+			cursor pointer
+			font-size 1.5em
+			color #ddd
+			right 0
+			padding .25em .5em
+			width 150px
+			bottom 0px
+			background-color rgba(0,0,0,0.6)
 	.bottom
 		position absolute
 		bottom 7em

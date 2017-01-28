@@ -186,6 +186,55 @@ body h1 {
   float: left;
   margin-left: 4.5em;
 }
+.cruise .video .video_panel .buttons {
+  position: absolute;
+  float: right;
+  right: 5%;
+  width: 300px;
+  bottom: 0px;
+}
+.cruise .video .video_panel .buttons > p {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ddd;
+  left: 0;
+  padding: 0.25em 0.5em;
+  width: 150px;
+  float: left;
+  background-color: rgba(0,0,0,0.6);
+}
+.cruise .video .video_panel .buttons > p:nth-of-type(1) {
+  border-right: 1px solid #222;
+}
+.cruise .comment_input {
+  position: absolute;
+  float: right;
+  right: 5%;
+  width: 300px;
+  height: 100px;
+  bottom: 0px;
+}
+.cruise .comment_input textarea {
+  width: 300px;
+  height: 100px;
+}
+.cruise .comment_input textarea select {
+  outline: none;
+}
+.cruise .comment_input textarea:focus {
+  border: solid 1px #aaa;
+}
+.cruise .comment_input p {
+  position: absolute;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ddd;
+  right: 0;
+  padding: 0.25em 0.5em;
+  width: 150px;
+  bottom: 0px;
+  background-color: rgba(0,0,0,0.6);
+}
 .cruise .bottom {
   position: absolute;
   bottom: 7em;

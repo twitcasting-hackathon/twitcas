@@ -17,11 +17,18 @@
           <p>{{comment.message}}</p>
         </div>
       </div>
+      <div class="buttons">
+        <p ng-click="nextCast()">NEXT</p>
+        <p ng-click="pause()">PAUSE</p>
+      </div>
     </div>
+  </div>
+  <div class="comment_input">
+    <textarea ng-model="newComment"></textarea>
+    <p ng-click="postComment">SEND</p>
   </div>
   <div class="bottom"><img ng_src="{{live.image}}"/>
     <h1>{{live.name}}</h1>
     <p>@{{live.screen_id}}</p>
   </div>
 </div>
-<p ng-click="nextCast()">next</p>
