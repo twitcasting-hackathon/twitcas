@@ -32,7 +32,7 @@ body h1 {
   position: relative;
   top: 2.5em;
 }
-.top .header .title h1 {
+.top .header .title > h1 {
   position: relative;
   font-size: 3.5em;
   color: #efefef;
@@ -96,11 +96,12 @@ body h1 {
   letter-spacing: 0;
 }
 .cruise .header {
+  position: absolute;
   width: 100%;
   height: 3em;
   background-color: rgba(0,0,0,0.4);
 }
-.cruise .header p {
+.cruise .header > p {
   font-size: 1.5em;
   margin: 0.35em 1em;
   float: left;
@@ -108,8 +109,98 @@ body h1 {
   color: #ddd;
   letter-spacing: 1px;
 }
-.cruise .header p:nth-of-type(2) {
+.cruise .header > p:nth-of-type(2) {
   font-size: 1em;
   margin: 1em 1em;
   float: right;
+}
+.cruise .video {
+  position: absolute;
+  margin-top: 3em;
+  width: 100%;
+}
+.cruise .video > h1 {
+  position: relative;
+  text-align: left;
+  color: #ddd;
+  left: 5%;
+  width: 300px;
+}
+.cruise .video > p {
+  position: relative;
+  text-align: left;
+  color: #ddd;
+  left: 5%;
+  width: 300px;
+}
+.cruise .video .video_panel {
+  width: 100%;
+}
+.cruise .video .video_panel video {
+  position: relative;
+  float: left;
+  left: 5%;
+  width: 800px;
+  height: 400px;
+}
+.cruise .video .video_panel .comments {
+  position: absolute;
+  float: right;
+  right: 5%;
+  width: 300px;
+  z-index: 2;
+}
+.cruise .video .video_panel .comments > h1 {
+  font-size: 1.5em;
+  color: #ddd;
+  left: 0;
+  padding: 0.25em 0.5em;
+  background-color: rgba(0,0,0,0.6);
+}
+.cruise .video .video_panel .comment_panel {
+  position: relative;
+  float: right;
+  right: 5%;
+  width: 300px;
+  height: 400px;
+  overflow-y: scroll;
+  background-color: #efefef;
+}
+.cruise .video .video_panel .comment_panel .comment {
+  width: 300px;
+  height: 60px;
+  border-bottom: 1px solid #444;
+  margin-top: 0.5em;
+}
+.cruise .video .video_panel .comment_panel .comment:nth-of-type(1) {
+  margin-top: 3em;
+}
+.cruise .video .video_panel .comment_panel .comment img {
+  position: absolute;
+  width: 50px;
+  display: inline-block;
+  left: 1em;
+}
+.cruise .video .video_panel .comment_panel .comment p {
+  display: inline-block;
+  text-align: left;
+}
+.cruise .bottom {
+  position: absolute;
+  bottom: 7em;
+  left: 5%;
+}
+.cruise .bottom img {
+  width: 60px;
+  float: left;
+  margin-right: 2em;
+  border-radius: 50%;
+}
+.cruise .bottom h1 {
+  float: left;
+  font-size: 1.5em;
+  color: #ddd;
+}
+.cruise .bottom p {
+  color: #ddd;
 }

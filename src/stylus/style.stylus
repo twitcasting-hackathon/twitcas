@@ -31,7 +31,7 @@ html,body
 		.title
 			position relative
 			top 2.5em;
-			h1
+			> h1
 				position relative
 				font-size 3.5em
 				color #efefef
@@ -87,10 +87,11 @@ html,body
 
 .cruise
 	.header
+		position absolute
 		width 100%
 		height 3em
 		background-color rgba(0,0,0,0.4)
-		p
+		> p
 			font-size 1.5em
 			margin 0.35em 1em
 			float left
@@ -101,3 +102,77 @@ html,body
 				font-size 1em
 				margin 1em 1em
 				float right
+	.video
+		position absolute
+		margin-top 3em
+		width 100%
+		> h1
+			position relative
+			text-align left
+			color #ddd
+			left 5%
+			width 300px
+		> p
+			position relative
+			text-align left
+			color #ddd
+			left 5%
+			width 300px
+		.video_panel
+			width 100%
+			video
+				position relative
+				float left
+				left 5%
+				width 800px
+				height 400px
+			.comments
+				position absolute
+				float right
+				right 5%
+				width 300px
+				z-index 2
+				> h1
+					font-size 1.5em
+					color #ddd
+					left 0
+					padding .25em .5em
+					background-color rgba(0,0,0,0.6)
+			.comment_panel
+				position relative
+				float right
+				right 5%
+				width 300px
+				height 400px
+				overflow-y scroll
+				background-color #efefef
+				.comment
+					width 300px
+					height 60px
+					border-bottom 1px solid #444
+					margin-top .5em;
+					&:nth-of-type(1)
+						margin-top 3em
+					img
+						position absolute
+						width 50px
+						display inline-block
+						left 1em
+					p
+						display inline-block
+						text-align left
+	.bottom
+		position absolute
+		bottom 7em
+		left 5%
+		img
+			width 60px
+			float left
+			margin-right 2em
+			border-radius 50%
+		h1
+			float left
+			font-size 1.5em
+			color #ddd
+		p
+			color #ddd
