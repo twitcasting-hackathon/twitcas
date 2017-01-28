@@ -3,8 +3,8 @@ div.cruise
 		p Twicas Cruise
 		p Logout
 	div.video
-		h1 タイトル
-		p サブタイトル
+		h1 {{live.title}}
+		p {{live.subtitle}}
 		div.video_panel
 			video(ng-src="{{live.url}}" autoplay="true" controls="true" poster="/img/screen-offline-320-flash-ja.jpg")
 			div.comments
@@ -35,8 +35,8 @@ div.cruise
 					img(src="pic/icon.jpg")
 					p コメント
 	div.bottom
-		img(src="pic/icon.jpg")
-		h1 配信者の名前
-		p @screen_name
+		img(ng_src="{{live.image}}")
+		h1 {{live.name}}
+		p @{{live.screen_id}}
 
 p(ng-click="nextCast()") next

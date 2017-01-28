@@ -111,7 +111,7 @@ html,body
 			text-align left
 			color #ddd
 			left 5%
-			width 300px
+			width 800px
 		> p
 			position relative
 			text-align left
@@ -160,7 +160,8 @@ html,body
 						left 1em
 					p
 						display inline-block
-						text-align left
+						float left
+						margin-left 4.5em
 	.bottom
 		position absolute
 		bottom 7em

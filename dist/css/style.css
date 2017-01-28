@@ -124,7 +124,7 @@ body h1 {
   text-align: left;
   color: #ddd;
   left: 5%;
-  width: 300px;
+  width: 800px;
 }
 .cruise .video > p {
   position: relative;
@@ -183,7 +183,8 @@ body h1 {
 }
 .cruise .video .video_panel .comment_panel .comment p {
   display: inline-block;
-  text-align: left;
+  float: left;
+  margin-left: 4.5em;
 }
 .cruise .bottom {
   position: absolute;
