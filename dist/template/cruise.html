@@ -5,8 +5,8 @@
     <p>Logout</p>
   </div>
   <div class="video">
-    <h1>タイトル</h1>
-    <p>サブタイトル</p>
+    <h1>{{live.title}}</h1>
+    <p>{{live.subtitle}}</p>
     <div class="video_panel">
       <video ng-src="{{live.url}}" autoplay="true" controls="true" poster="/img/screen-offline-320-flash-ja.jpg"></video>
       <div class="comments">
@@ -40,9 +40,9 @@
       </div>
     </div>
   </div>
-  <div class="bottom"><img src="pic/icon.jpg"/>
-    <h1>配信者の名前</h1>
-    <p>@screen_name</p>
+  <div class="bottom"><img ng_src="{{live.image}}"/>
+    <h1>{{live.name}}</h1>
+    <p>@{{live.screen_id}}</p>
   </div>
 </div>
 <p ng-click="nextCast()">next</p>
