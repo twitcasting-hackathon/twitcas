@@ -13,10 +13,13 @@ div.cruise
 				div.comment(ng-repeat="comment in comments")
 					img(ng-src="{{comment.from_user.image}}")
 					p {{comment.message}}
-				
+			div.buttons
+				p(ng-click="nextCast()") NEXT
+				p(ng-click="pause()") PAUSE
+	div.comment_input
+		textarea(ng-model="newComment")
+		p(ng-click="postComment") SEND
 	div.bottom
 		img(ng_src="{{live.image}}")
 		h1 {{live.name}}
 		p @{{live.screen_id}}
-
-p(ng-click="nextCast()") next
