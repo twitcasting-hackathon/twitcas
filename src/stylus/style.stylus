@@ -76,6 +76,11 @@ html,body
 					color #333
 					font-size 1.4em
 					letter-spacing 2px
+					width 240px
+					white-space nowrap
+					overflow hidden
+					text-overflow ellipsis
+					-o-text-overflow ellipsis
 				p
 					color #333
 					font-size .8em
