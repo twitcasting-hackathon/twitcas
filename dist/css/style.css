@@ -75,7 +75,7 @@ body h1 {
   text-align: left;
 }
 .top .main .card img {
-  height: 140px;
+  width: 300px;
 }
 .top .main .card .caps {
   margin: 0.5em 1em;
