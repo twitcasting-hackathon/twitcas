@@ -34,24 +34,42 @@ app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpP
 	$scope.lives = {}
 	$scope.live = {}
 	$scope.counter = 0;
+	var loop;
+	
 
 	$http.post('../api/live_list.php?at=' + token)
 		.then(function(res){
-			console.log(res)
+
 			$scope.lives = res.data;
-			$interval(function(){
-				$scope.live = $scope.lives[$scope.counter];
-				$scope.counter++;
-				console.log($scope.lives[$scope.counter])
-			},20000)
+
+			//first
+			$scope.live = $scope.lives[0];
+			$scope.counter++;
+
+			$scope.strtCast();
 		})
 		.catch(function(err){
 			console.log(err);
 		});
 
+	$scope.strtCast = function(){
+		
+		loop = $interval(function(){
+			$scope.counter++;
+			$scope.live = $scope.lives[$scope.counter];
+			console.log($scope.lives[$scope.counter]);
+		},10000)
+	}
+
+	$scope.nextCast = function(){
+		$scope.counter++;
+		$scope.live = $scope.lives[$scope.counter];
+		$interval.cancel(loop);
+		$scope.strtCast();
+	}
 
 	// test
-	$scope.live.url = "http://twitcasting.tv/c:kyapirun_run/metastream.m3u8/?video=1"
+	//$scope.live.url = "http://twitcasting.tv/c:kyapirun_run/metastream.m3u8/?video=1"
 
 })
 
