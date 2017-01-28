@@ -1,5 +1,5 @@
 
-<div class="cruise">
+<div class="cruise" ng-show="dark">
   <div class="header">
     <p>Twicas Cruise</p>
     <p>Logout</p>
@@ -25,10 +25,45 @@
   </div>
   <div class="comment_input">
     <textarea ng-model="newComment"></textarea>
-    <p ng-click="postComment">SEND</p>
+    <p ng-click="postComment()">SEND</p>
   </div>
   <div class="bottom"><img ng_src="{{live.image}}"/>
     <h1>{{live.name}}</h1>
     <p>@{{live.screen_id}}</p>
   </div>
 </div>
+<div class="curuise-light" ng-show="light">
+  <div class="wrapper">
+    <div>
+      <div class="title">{{live.title}}</div>
+      <div class="sub">{{live.subtitle}}</div>
+      <div class="video-wrapper">
+        <video ng-src="{{live.url}}" autoplay="true" controls="true"></video>
+        <div class="cont">
+          <div class="pause" ng-click="pause()"><i class="ion-pause"></i></div>
+          <div class="next" ng-click="nextCast()"><i class="ion-play"></i></div>
+        </div>
+      </div>
+    </div>
+    <div> 
+      <div class="comments">
+        <h2>comments</h2>
+        <div class="panel">
+          <div class="comment" ng-repeat="comment in comments">
+            <div class="images"><img ng-src="{{comment.from_user.image}}"/></div>
+            <div class="text">
+              <p>{{comment.message}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <input ng-model="newComment"/>
+    <div class="send">
+      <p ng-click="postComment()">send</p>
+    </div>
+  </div>
+</div>
+<div class="fix"><span ng-click="darkmode()">Dark</span><span ng-click="lightmode()">Light</span></div>

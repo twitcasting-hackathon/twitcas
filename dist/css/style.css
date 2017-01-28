@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 @font-face {
   font-family: 'OpenSans';
   src: url("../fonts/OpenSans.ttf") format('truetype');
@@ -6,21 +7,27 @@
   font-family: 'OpenSansBold';
   src: url("../fonts/OpenSans-Semibold.ttf") format('truetype');
 }
+@font-face {
+  font-family: "sen";
+  src: url("../fonts/Sen-Bold.otf");
+}
+@font-face {
+  font-family: "sen-regular";
+  src: url("../fonts/Sen-Regular.otf");
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-html,
-body {
+body:not(.light) {
   font-family: 'OpenSans';
   width: 100%;
   height: 100%;
   background-color: #5b69bf;
   text-align: center;
 }
-html h1,
-body h1 {
+body:not(.light) h1 {
   color: #eee;
 }
 .top .header {
@@ -253,4 +260,136 @@ body h1 {
 }
 .cruise .bottom p {
   color: #ddd;
+}
+.light {
+  font-family: "sen-regular";
+  background: #fff;
+  padding: 5em 8em;
+}
+.light .wrapper {
+  width: 100%;
+  display: flex;
+}
+.light .wrapper > div {
+  padding: 0 2em;
+}
+.light .wrapper > div:first-child {
+  width: 70%;
+}
+.light .wrapper > div:last-child {
+  width: 30%;
+}
+.light .wrapper > div .title {
+  color: #333;
+  letter-spacing: 4px;
+  font-size: 1.5em;
+}
+.light .wrapper > div .sub {
+  letter-spacing: 2px;
+  font-size: 0.95em;
+  color: #444;
+  padding: 1em 0;
+}
+.light .wrapper > div .video-wrapper {
+  width: 100%;
+  position: relative;
+}
+.light .wrapper > div .video-wrapper video {
+  width: 100%;
+}
+.light .wrapper > div .video-wrapper .cont {
+  width: 9em;
+  height: 4.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+.light .wrapper > div .video-wrapper .cont > * {
+  background: #000;
+  width: 4.5em;
+  height: 4.5em;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.light .wrapper > div .video-wrapper .cont > * i {
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+}
+.light .wrapper > div .video-wrapper .cont > *:hover {
+  background: #222;
+}
+.light .wrapper > div .comments h2 {
+  letter-spacing: 3px;
+  color: #444;
+  font-size: 1.7em;
+  font-weight: 100;
+  font-family: 'sen-regular';
+}
+.light .wrapper > div .comments .panel {
+  height: 75vh;
+  overflow: scroll;
+}
+.light .wrapper > div .comments .comment {
+  padding: 1em 0;
+  width: 100%;
+  display: flex;
+}
+.light .wrapper > div .comments .comment .images {
+  width: 20%;
+}
+.light .wrapper > div .comments .comment .images img {
+  width: 100%;
+  border-radius: 100px;
+}
+.light .wrapper > div .comments .comment .text {
+  width: 80%;
+}
+.light .wrapper > div .comments .comment .text p {
+  color: #444;
+  letter-spacing: 1px;
+  font-size: 1em;
+  padding: 0.25em 1em;
+}
+.post {
+  width: 80%;
+  margin-left: 3em;
+}
+.post > * {
+  float: left;
+}
+.post input {
+  padding: 0.25em;
+  font-size: 1.3em;
+  border: none;
+  outline: none;
+  width: 70%;
+  border-bottom: solid 1px #444;
+}
+.post .send {
+  background: #111;
+  padding: 0.5em 0.75em;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.fix {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2em;
+}
+.fix a {
+  padding: 0.5em;
+  letter-spacing: 2px;
+  font-family: 'sen-regular';
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
 }
