@@ -29,47 +29,30 @@ app.controller('logout',function($scope,$cookies,$location){
 	$location.path("/");
 })
 
-app.controller('cruise',function($scope,$http,$timeout,$cookies,$httpParamSerializerJQLike,$window,$routeParams){
+app.controller('cruise',function($scope,$http,$interval,$timeout,$cookies,$httpParamSerializerJQLike,$window,$routeParams){
 	token = $cookies.get('token');
 	$scope.lives = {}
 	$scope.live = {}
-	count = 0;
-
-	options = {
-		at: token
-	}
-
+	$scope.counter = 0;
 
 	$http.post('../api/live_list.php?at=' + token)
 		.then(function(res){
+			console.log(res)
 			$scope.lives = res.data;
+			$interval(function(){
+				$scope.live = $scope.lives[$scope.counter];
+				$scope.counter++;
+				console.log($scope.lives[$scope.counter])
+			},20000)
 		})
 		.catch(function(err){
 			console.log(err);
 		});
 
-	$timeout(function(){
-		if(!(count < 50)) {
-			count = 0;
 
-			$http.post('../api/live_list.php?at=' + token)
-				.then(function(res){
-					$scope.lives = res.data
-				})
-				.catch(function(err){
-					console.log(err);
-				});
-		}
-
-		$scope.live = $scope.lives[count];
-		count++;
-		
-		console.log($scope.live);
-		console.log($scope.lives);
-	},5000)
-	
 	// test
 	$scope.live.url = "http://twitcasting.tv/c:kyapirun_run/metastream.m3u8/?video=1"
+
 })
 
 app.controller('history',function($scope){
